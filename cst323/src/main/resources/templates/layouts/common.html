@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" xmlns:lzyout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<div th:fragment="header" style="background-image: url('greenbook.png'); background-size:50%; background-repeat:no-repeat; background-position-x:50%; background-clip:border-box;">
+		
+		<div align="center">
+			<h1 style="color: mediumaquamarine; text-align:center">Writer's Nook</h1>
+		</div>
+		
+		<div class="bs-example">
+			<nav class="topnav-centered">
+				<a style="border:1px; padding-left:10px; padding-right:10px; color:darkslategray" href="/home">Home</a>
+				<a style="border:1px; padding-left:10px; padding-right:10px; color:darkslategray" href="/login">Login</a>
+				<a style="border:1px; padding-left:10px; padding-right:10px; color:darkslategray" href="/profile">Profile</a>
+				<a style="border:1px; padding-left:10px; padding-right:10px; color:darkslategray" href="/addpost">Post</a>
+			</nav>
+		</div>
+		
+	</div>
+	<div th:fragment="footer">
+		<audio src="/Guardian's Tower.mp3" controls autoplay loop>
+			<p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio>
+	</div>
+</html>

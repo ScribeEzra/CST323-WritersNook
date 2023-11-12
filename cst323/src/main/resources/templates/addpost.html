@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" xmlns:lzyout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate = "layouts/defaultTemplate">
+	<head>
+		<title>Post</title>
+		<style>
+			* {
+				font-family:Franklin Gothic Medium, Arial Narrow, Arial sans-serif;
+			}
+			h1 {
+				color:mediumaquamarine;				
+				font-style:italic;
+				font-weight:bold;
+				text-shadow:3px;
+				font-size: 48px;
+			}
+			h2 {
+				color:mediumaquamarine;
+				font-style:italic;
+				font-weight:bold;
+				font-size:32;
+			}
+			p {
+				color:darkolivegreen;
+				font-style:normal;
+			}
+			.title_box {
+				background-color:antiquewhite;
+				border:5px solid darkolivegreen;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:720px;
+			}
+			.post_box{
+				background-color:darkslategray;
+				border:5px solid mediumaquamarine;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:700px;
+			}
+			.post_title {
+				background-color:antiquewhite;
+				border:2px solid black;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:650px;
+			}
+			.post_body {
+				background-color:floralwhite;
+				border:1px solid black;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:650px;
+				font-size:24;
+			}
+		</style>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<div class="title_box">
+				<h2>Add a Post</h1>
+				<p>This is where you can post your creative writing!</p>
+			</div>
+			<div style="width:720px; height: 400px; overflow:auto">
+				<form action="#" method="post" th:action="@{submitPost}" th:object="${postModel}">
+					<div class="my-3">
+					  <label for="exampleFormControlTextarea1" class="form-label" style="color:mediumaquamarine">Title</label>
+					  <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+					</div>
+					<div class="my-3">
+					  <label for="exampleFormControlTextarea1" class="form-label" style="color:mediumaquamarine">Body</label>
+					  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					<div class="my-3">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

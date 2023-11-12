@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" smlnbs:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate = "layouts/defaultTemplate">
+	<head>
+		<title>Writer's Nook</title>
+		<style>
+			* {
+				font-family:Franklin Gothic Medium, Arial Narrow, Arial sans-serif;
+			}
+			h1 {
+				color:mediumaquamarine;				
+				font-style:italic;
+				font-weight:bold;
+				text-shadow:3px;
+				font-size: 48px;
+			}
+			h2 {
+				color:mediumaquamarine;
+				font-style:italic;
+				font-weight:bold;
+				font-size:32;
+			}
+			p {
+				color:darkolivegreen;
+				font-style:normal;
+			}
+			.title_box {
+				background-color:antiquewhite;
+				border:5px solid darkolivegreen;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:720px;
+			}
+			.post_box{
+				background-color:darkslategray;
+				border:5px solid mediumaquamarine;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:700px;
+			}
+			.post_title {
+				background-color:antiquewhite;
+				border:2px solid black;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:650px;
+			}
+			.post_body {
+				background-color:floralwhite;
+				border:1px solid black;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:650px;
+				font-size:24;
+			}
+		</style>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<div class="title_box">
+				<h2>Home</h2>
+				<p>This is the place to store and display your creative writing snippets!</p>
+			</div>
+			<div style="width:720px; height: 400px; overflow:auto">
+				<div class="post_box" th:each = "post:${posts}">
+					<div class="post_title">
+						<h2 th:text = "${post.title}">Post Title</h2>
+					</div>
+					<div class="post_body">
+						<p th:text = "${post.body}">Post Body</p>
+					</div>
+					<div class="post_body">
+						<p th:text = "${post.author}">Post Author</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

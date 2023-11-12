@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:lzyout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate = "layouts/defaultTemplate">
+	<head>
+		<title>Log In</title>
+		<style>
+			* {
+				font-family:Franklin Gothic Medium, Arial Narrow, Arial sans-serif;
+			}
+			h1 {
+				color:mediumaquamarine;				
+				font-style:italic;
+				font-weight:bold;
+				text-shadow:3px;
+				font-size: 48px;
+			}
+			h2 {
+				color:mediumaquamarine;
+				font-style:italic;
+				font-weight:bold;
+				font-size:32;
+			}
+			p {
+				color:darkolivegreen;
+				font-style:normal;
+			}
+			.title_box {
+				background-color:antiquewhite;
+				border:5px solid darkolivegreen;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:720px;
+			}
+			.post_box{
+				background-color:darkslategray;
+				border:5px solid mediumaquamarine;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:700px;
+			}
+			.post_title {
+				background-color:antiquewhite;
+				border:2px solid black;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:650px;
+			}
+			.post_body {
+				background-color:floralwhite;
+				border:1px solid black;
+				padding: 1em;
+				text-align:center;
+				justify-content:center;
+				width:650px;
+				font-size:24;
+			}
+		</style>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<div class="title_box">
+				<h2>Login</h2>
+				<p>Enter your login credentials</p>
+			</div>
+			<div style="width:720px; height: 400px; overflow:auto">
+				<form action="#" method="post" th:action="@{processLogin}" th:object="${userModel}">
+				  <div class="my-3">
+				    <label for="username" class="form-label" style="color:mediumaquamarine">Username</label>
+				    <input th:field="*{username}" type="text" class="form-control" id="username" required>
+				  </div>
+				  <div class="mb-3">
+				    <label for="password" class="form-label" style="color:mediumaquamarine">Password</label>
+				    <input th:field="*{password}" type="password" class="form-control" id="password" required>
+				  </div>
+				  <p class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+				  <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
